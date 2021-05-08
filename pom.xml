@@ -13,4 +13,12 @@
     <maven.compiler.target>15</maven.compiler.target>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>3.16.0</version>
+    </dependency>
+  </dependencies>
+
 </project>
