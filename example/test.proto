@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+// My API
+service TestAPI {
+    // A unary request
+    rpc Unary(UnaryRequest) returns (UnaryResponse);
+    // Something streamed by the server
+    rpc ServerStream(ServerStreamRequest) returns (stream ServerStreamResponse);
+    // The client can stream too
+    rpc ClientStream(stream ClientStreamRequest) returns (ClientStreamResponse);
+    // Let both of them stream
+    rpc BidiStream(stream BidiStreamRequest) returns (stream BidiStreamResponse);
+}
+
+message UnaryRequest {}
+message UnaryResponse {}
+message ServerStreamRequest {}
+message ServerStreamResponse {}
+message ClientStreamRequest {}
+message ClientStreamResponse {}
+message BidiStreamRequest {}
+message BidiStreamResponse {}
