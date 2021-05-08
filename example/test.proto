@@ -12,7 +12,10 @@ service TestAPI {
     rpc BidiStream(stream BidiStreamRequest) returns (stream BidiStreamResponse);
 }
 
-message UnaryRequest {}
+// Foo
+message UnaryRequest {
+    string foo = 1;
+}
 message UnaryResponse {}
 message ServerStreamRequest {}
 message ServerStreamResponse {}
