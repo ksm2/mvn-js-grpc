@@ -58,6 +58,22 @@ public class Main {
             return str.substring(0, 1).toLowerCase() + str.substring(1);
         }
 
+        public String methodMode(DescriptorProtos.MethodDescriptorProto method) {
+            if (method.getClientStreaming()) {
+                if (method.getServerStreaming()) {
+                    return "BidiStream";
+                }
+
+                return "ClientStream";
+            }
+
+            if (method.getServerStreaming()) {
+                return "ServerStream";
+            }
+
+            return "Unary";
+        }
+
         public String jsType(FieldDescriptorProto field) {
             switch (field.getType()) {
                 case TYPE_DOUBLE:

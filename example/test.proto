@@ -3,23 +3,23 @@ syntax = "proto3";
 // My API
 service TestAPI {
     // A unary request
-    rpc Unary(UnaryRequest) returns (UnaryResponse);
+    rpc DoUnary(DoUnaryRequest) returns (DoUnaryResponse);
     // Something streamed by the server
-    rpc ServerStream(ServerStreamRequest) returns (stream ServerStreamResponse);
+    rpc DoServerStream(DoServerStreamRequest) returns (stream DoServerStreamResponse);
     // The client can stream too
-    rpc ClientStream(stream ClientStreamRequest) returns (ClientStreamResponse);
+    rpc DoClientStream(stream DoClientStreamRequest) returns (DoClientStreamResponse);
     // Let both of them stream
-    rpc BidiStream(stream BidiStreamRequest) returns (stream BidiStreamResponse);
+    rpc DoBidiStream(stream DoBidiStreamRequest) returns (stream DoBidiStreamResponse);
 }
 
 // Foo
-message UnaryRequest {
+message DoUnaryRequest {
     string foo = 1;
 }
-message UnaryResponse {}
-message ServerStreamRequest {}
-message ServerStreamResponse {}
-message ClientStreamRequest {}
-message ClientStreamResponse {}
-message BidiStreamRequest {}
-message BidiStreamResponse {}
+message DoUnaryResponse {}
+message DoServerStreamRequest {}
+message DoServerStreamResponse {}
+message DoClientStreamRequest {}
+message DoClientStreamResponse {}
+message DoBidiStreamRequest {}
+message DoBidiStreamResponse {}
